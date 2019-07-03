@@ -100,7 +100,7 @@ export class CdkEmailStack extends cdk.Stack {
         'integration.request.header.Content-Type': "'application/x-www-form-urlencoded'"
     },
     requestTemplates: {
-        'application/json': 'Action=SendEmail&Source=$util.urlEncode("noemail@gmail.com")&Destination.ToAddresses.member.1=$util.urlEncode($input.path(\'$.to\')&Message.Subject.Data=$util.urlEncode($input.path(\'$.subject\')&Message.Body.Text.Data=$util.urlEncode("bodybody")'
+        'application/json': 'Action=SendEmail&Source=$util.urlEncode($input.path(\"$.from\"))&Destination.ToAddresses.member.1=$util.urlEncode($input.path(\"$.to\"))&Message.Subject.Data=$util.urlEncode($input.path(\"$.subject\"))&Message.Body.Text.Data=$util.urlEncode($input.path(\"$.body\"))'
     },
     integrationResponses: [
         integrationResponse
